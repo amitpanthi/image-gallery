@@ -6,19 +6,23 @@ body, html{
 }
 
 img{
-    height:256px;
-    width: 368px;
+    height:100%;
+    width: 100%;
     border: 5px solid black;
     box-shadow: 5px 5px 10px #CECECE;
-    margin: 0.5%;
 }
 
 .content-wrapper{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(3, 256px);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
 }
 
-.img-row-1, .img-row-2, .img-row-3{
-    display:flex;
-    flex-direction: row;
+@media screen and (max-width:480px){
+    .content-wrapper{
+        grid-template-rows: repeat(9, 200px);
+        grid-template-columns: 256px;
+    }
 }
